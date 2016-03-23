@@ -16,9 +16,11 @@ public class RmiServer implements IHello {
     public static void main(String[] args) {
         try {
             RmiServer rs = new RmiServer();
+
+            // stub 이 검색했을 때, 객체 전달할 객체 생성.
             IHello stub = (IHello) UnicastRemoteObject.exportObject(rs, 0);
 
-            // Bind the remote object's stub in the registry
+            // registry 에 stub 객체 바인딩.
             Registry registry = LocateRegistry.getRegistry();
             registry.bind("IHello", stub);
 
