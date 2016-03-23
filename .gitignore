@@ -1,0 +1,6 @@
+.idea/
+bower/
+target/
+*.iml
+build/
+*.class
